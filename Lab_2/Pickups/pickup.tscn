@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://cukgvwhc8cpcd"]
+
+[ext_resource type="Texture2D" uid="uid://3tbiy4p47xad" path="res://icon.svg" id="1_ct3y0"]
+[ext_resource type="Script" uid="uid://bft72v3uttovo" path="res://Pickups/pickup.gd" id="1_npsnu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_npsnu"]
+radius = 61.0082
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_68cko"]
+radius = 424.019
+
+[node name="Pickup" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+collision_layer = 2
+script = ExtResource("1_npsnu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ct3y0")
+
+[node name="PickupShape" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_npsnu")
+
+[node name="MagnetismArea" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="MagnetismShape" type="CollisionShape2D" parent="MagnetismArea"]
+shape = SubResource("CircleShape2D_68cko")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="MagnetismArea" to="." method="_on_magnetism_area_body_entered"]
+[connection signal="body_exited" from="MagnetismArea" to="." method="_on_magnetism_area_body_exited"]
