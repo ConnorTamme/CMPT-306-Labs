@@ -9,7 +9,7 @@ func initialize() -> void: #Basic initialize() function. No important function o
 	print("Spawned Coin!")
 
 func _physics_process(delta: float) -> void:
-	if magnet_target != null:
+	if magnet_target != null: #If there is a magnetism target (the player) pull the pickup towards them
 		self.position = self.position.move_toward(magnet_target.position, delta * magnetize_speed)
 
 # callback method from the corresponding signal sent by the Area2D
@@ -21,11 +21,11 @@ func _on_body_entered(body):
 		queue_free()	
 
 
-func _on_magnetism_area_body_entered(body: Node2D) -> void:
+func _on_magnetism_area_body_entered(body: Node2D) -> void: #Called when the player enters the magnetism area
 	if body is Player:
 		magnet_target = body
 
 
-func _on_magnetism_area_body_exited(body: Node2D) -> void:
+func _on_magnetism_area_body_exited(body: Node2D) -> void: #Called when the player exits the magnetism area
 	if body == magnet_target:
 		magnet_target = null
