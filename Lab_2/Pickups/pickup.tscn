@@ -15,6 +15,7 @@ collision_layer = 2
 script = ExtResource("1_npsnu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 0, 1)
 texture = ExtResource("1_ct3y0")
 
 [node name="PickupShape" type="CollisionShape2D" parent="."]
