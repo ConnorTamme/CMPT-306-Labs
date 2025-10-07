@@ -25,7 +25,7 @@ func _physics_process(_delta:float) -> void:
 			animatedSprite.animation = "walk_V"
 	else:
 		animatedSprite.animation = "default"
-		
+	
 	#This handles any sprite flipping
 	if input_direction.y < 0:
 		animatedSprite.flip_v = false

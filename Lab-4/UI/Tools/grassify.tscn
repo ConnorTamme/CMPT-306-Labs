@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bg650mfvdfuyg"]
+
+[ext_resource type="PackedScene" uid="uid://c71iftre7mnwu" path="res://UI/Tools/tool.tscn" id="1_rybpq"]
+[ext_resource type="Script" uid="uid://b04twcll65r82" path="res://UI/Tools/grassify.gd" id="2_0fnuw"]
+
+[node name="Grassify" instance=ExtResource("1_rybpq")]
+script = ExtResource("2_0fnuw")

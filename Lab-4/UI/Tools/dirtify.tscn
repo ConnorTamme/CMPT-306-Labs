@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmgj0ubccagbq"]
+
+[ext_resource type="PackedScene" uid="uid://c71iftre7mnwu" path="res://UI/Tools/tool.tscn" id="1_wiyix"]
+[ext_resource type="Script" uid="uid://cvj5qyoninwij" path="res://UI/Tools/dirtify.gd" id="2_ya6vo"]
+
+[node name="Dirtify" instance=ExtResource("1_wiyix")]
+script = ExtResource("2_ya6vo")
